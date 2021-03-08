@@ -297,10 +297,7 @@ For designing of the appearance of the application, wire frames and prototypes w
 
 \section{Process}
 
-Overview of how the app was created. Overview of how the app was created. Overview of how the app was created.
-
-\textcolor{red}{---- Need to include the name somewhere (Motion Music)}
-
+The application was created with the User Study in mind and was named Motion Music. Initial design of what the appearance and workflow of the application was created through a process of creating low fidelity wire-frames followed by high fidelity digital wire-frame prototypes. Following this, various assets that would be used by the application were accumulated to ensure the implementation process was not hindered by hte assumption of how the music files would be supplied to the participants. The application was then implemented and ongoing and final testing and evaluation of both the initial music application and the additional gesture integration with it was carried out.
 
 \subsection{Design}
 
@@ -367,9 +364,7 @@ proximity.setListener(new Proximity.Listener() {
 
 The other gesture that was chosen would be of a Device Motion style. The function of which was to begin playing a random song from the list. This gesture could be performed when either the Tunes or the Player activity was active. The gesture would be performed by simply shaking the device. This was chosen as a suitable action as it mimicked the motion of rolling some dice to give a random number, in this case a random song. When on the Tunes List page this would simply activate a button press on the random song button which would generate a random number with a maximum equal to the number of songs available. The song in this position would them be selected. When on the Player page and the gesture is detected it will generate a random number with a maximum equal to the number of songs available. However, in this instance it would call the skip button but with the argument of the random number, intending to skip that many places in the list and play the equivalent song.
 
-This gesture was implemented by measuring the changes in the device's accelerometers three axis. If there was a notable increase, then it would be detected as this gesture being performed. The accelerometer data stream was gathered again by making use of the SensorEvent values. The accelerometer would provide 3 values, the acceleration force along each of the x, y and z axis. This would factor in the force exerted by gravity. Following the previous gesture, the initial values from the were not checked to see if a gesture was detected to ensure errors were prevented as the first set of values will not have anything to be compared to. The gesture was detected in the difference between the current value and the previous value in at least 2 axis was found to be greater than a threshold value, as shown in Algorithm \ref{lst:Accelerometer} . This threshold was determined at the calibration step when the app is initially opened.
-
-\textcolor{red}{---- add the reason for choosing only 2 axis}
+This gesture was implemented by measuring the changes in the device's accelerometers three axis. If there was a notable increase, then it would be detected as this gesture being performed. The accelerometer data stream was gathered again by making use of the SensorEvent values. The accelerometer would provide 3 values, the acceleration force along each of the x, y and z axis. This would factor in the force exerted by gravity. Following the previous gesture, the initial values from the were not checked to see if a gesture was detected to ensure errors were prevented as the first set of values will not have anything to be compared to. The gesture was detected in the difference between the current value and the previous value in at least 2 axis was found to be greater than a threshold value, as shown in Algorithm \ref{lst:Accelerometer} . Only 2 axis were required to mee this threshold as it was found that when shaking a device this if often only moved substantially in 2 axis with the acceleration of the third staying low. If all three were required to meet the threshold this would become very difficult for users to complete. The threshold was determined at the calibration step when the app is initially opened.
 
 \begin{lstlisting}[language=python, float, caption={Java code detailing how the Shake Gesture is detected and how it is acted upon, this particular instance for when detection is made on the Tunes Activity.}, label=lst:Accelerometer]
 accelerometer.setListener(new Accelerometer.Listener() {
@@ -525,7 +520,7 @@ With exception of 1 participant, users  used the app 2-4 times or less after one
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{images/Use of MM.PNG}
-        \caption{Description}
+        \caption{Pie charts showing the participants usage of the Motion Music application over one week. The left chart showing the usage after one day, the middle chart showing the usage between the first the third days use and the right chart showing usage from the third day of use until the end of the survey (one week use).}
         \label{fig:usage}
 \end{figure}
 
@@ -542,7 +537,7 @@ Responses relating to perceived social acceptability were converted to values 1-
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{images/perceptions.PNG}
-        \caption{Description}
+        \caption{Line Graphs showing the average participants responses for Usefulness(left column of graphs), Ease of Use(center column of graphs) and social acceptability(right column of graphs) for the Device Motion gestures(upper row) and Mid-Air gestures (lower Row).}
         \label{fig:perceptions}
 \end{figure}
 
@@ -556,7 +551,7 @@ After a week of use, when asked to provide a circumstance where either gesture m
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{images/problems.PNG}
-        \caption{Description}
+        \caption{Table detailing participant examples of then they might deem it socially unacceptable to use either type of gesture.}
         \label{fig:problems}
 \end{figure}
 
@@ -625,16 +620,65 @@ To enhance what has been concluded, further studies should be done with a focus 
 
 \chapter{Ethics checklist}
 
+
 \chapter{Questionnaires}
+\begin{description}
+    \item \href{https://docs.google.com/forms/d/1pakX7XYVLeoAOoYjkXVDSh09DWRrcNKFbN93KbzdtMg/prefill}{Link to Questionnaire used in Preliminary Survey Study}
+\item
+    \item \href{https://docs.google.com/forms/d/1JbD9k1n20KKGAkHvTEXJXE3pGRheN1uez2E0XOwcXZU/prefill}{Link to Questionnaire used in User Study before participant use}
+\item
+    \item \href{https://docs.google.com/forms/d/1sm2wlPlcC8mvK1OyvnOXUq5_tHZXC1h9BahmidPfutQ/prefill}{Link to Questionnaire used in User Study after one day of participant use}
+\item
+    \item \href{https://docs.google.com/forms/d/1heEV_uBCCTCK5g-J18M_eL7aD9sfJnWIl7B-Aie7A4c/prefill}{Link to Questionnaire used in User Study after three days of participant use}
+\item
+    \item \href{https://docs.google.com/forms/d/1NoNhfJRtZiw-utZUCW7sfjN9cYZxTzjtm8tA7g0-hdo/prefill}{Link to Questionnaire used in User Study after seven days of participant use}
+\end{description}
+
 
 \chapter{Tables}
 Extensive tables or figures that are too bulky to fit in the main body of the report, particularly ones that are repetitive and summarised in the body.
 
+
 \chapter{Outline of the source code (e.g. directory structure)?}
 
-\chapter{Info Sheet}
+
+\chapter{Consent Agreement}
+Below is the Consent agreement that all participants of the User Study were asked to complete.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/SocialAcceptabilityConsentForm.pdf}
+\end{figure}
+
+
+\chapter{Information Sheet}
+Below is the Information Handout supplied to all User Study participants detailing experiment information, installation instructions and Motion Music Usage Details
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/MotionMusicInfoPage.pdf}
+\end{figure}
+
+\chapter{Experiment Debrief}
+Below is the Experiment Debrief supplied to all User Study participants
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Ethics Debrief.pdf}
+\end{figure}
+
 
 \chapter{References for music used}
+\begin{description}
+    \item Art Now by Alex (c) copyright 2011 Licensed under a Creative Commons Attribution (3.0) license. Ft: Snowflake
+    \item \url{http://dig.ccmixter.org/files/AlexBeroza/30344}
+\item
+    \item Dj Rkod - Pulse (George Ellinas Remix) by George\_Ellinas (c) copyright 2008 Licensed under a Creative Commons Attribution (3.0) license.
+    \item \url{http://dig.ccmixter.org/files/George_Ellinas/14073 }
+\item
+    \item There's A Better WAY ! by Loveshadow (c) copyright 2011 Licensed under a Creative Commons Attribution (3.0) license. 
+    \item \url{http://dig.ccmixter.org/files/Loveshadow/34402 }
+\item
+    \item Turning Into Normal (What Once Felt Strange) by SackJo22 (c) copyright 2013 Licensed under a Creative Commons Attribution (3.0) license. Ft: Analog by Nature, Haskel (HE31)
+    \item \url{http://dig.ccmixter.org/files/SackJo22/43036 Ft: Analog by Nature, Haskel (HE31)}
+\end{description}
 
 \end{appendices}
 
